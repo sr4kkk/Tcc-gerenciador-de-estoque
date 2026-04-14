@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- DPI / Designer -->
+		<!-- App roda em modo SystemAware (DPI real, sem zoom borrado) -->
+		<ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+		<!-- Designer do WinForms fica DpiUnaware (evita bagunça de layout no VS) -->
+		<ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
+
+		<!-- IMPORTANTE: sem ApplicationManifest aqui, pra não quebrar a execução -->
+		<!-- <ApplicationManifest>app.manifest</ApplicationManifest> -->
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Telas\ConfigForm.resx~RF8197f5e.TMP" />
+		<None Remove="Telas\dfvvdrzk.db4~" />
+		<None Remove="Telas\EstoqueForm.cs~RF7a4f1b8.TMP" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.3" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+	</ItemGroup>
+
+</Project>
